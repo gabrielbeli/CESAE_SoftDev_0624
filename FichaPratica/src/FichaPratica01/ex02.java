@@ -17,13 +17,13 @@ public class ex02 {
         soma = num1 + num2;
         System.out.println("Soma: " + soma);
 
-        sub = num1 + num2;
+        sub = num1 - num2;
         System.out.println("Subtração: " + sub);
 
-        multi = num1 + num2;
+        multi = num1 * num2;
         System.out.println("Multiplicação: " + multi);
 
-        div = num1 + num2;
+        div = num1 / num2;
         System.out.println("Divisão: " + div);
 
     }

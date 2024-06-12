@@ -10,7 +10,7 @@ public class ex04 {
         double raio, pi = 3.14, area;
 
         System.out.print("Insira um numero: ");
-        raio = input.nextInt();
+        raio = input.nextDouble();
 
         area = pi * (raio * raio);
 
