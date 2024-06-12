@@ -15,7 +15,7 @@ public class ex01 {
         num2 = input.nextInt();
 
         if (num1 >= num2) {
-            System.out.println("Maior: " + num1);
+            System.out.println("Maior:" + num1);
         } else {
             System.out.println("Maior: " + num2);
         }
