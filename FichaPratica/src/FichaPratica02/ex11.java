@@ -13,12 +13,12 @@ public class ex11 {
         System.out.print("Insira o valor a creditar/debitar: ");
         movimentacao = input.nextDouble();
 
-        if (movimentacao < 0){
-            saldoFinal = saldoAtual - movimentacao;
-            System.out.print("O saldo final é: " + saldoFinal);
+        saldoFinal = saldoAtual + movimentacao;
+
+        if (saldoFinal >= 0) {
+            System.out.println("O saldo final é: " + saldoFinal);
         } else {
-            saldoFinal = saldoAtual + movimentacao;
-            System.out.print("O saldo final é: " + saldoFinal);
+            System.out.println("Operação inválida. Saldo insuficiente.");
         }
     }
 }
