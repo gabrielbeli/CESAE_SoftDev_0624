@@ -5,14 +5,14 @@ import java.util.Scanner;
 public class ex07 {
     public static void main(String[] args) {
 
-        int number1 = 5, count = 0, total;
+        int sum = 0;
 
-        while (number1 >= count ){
-            System.out.print(count);
-            count = count + 1;
+        for (int i = 1; i <= 100; i++) {
+            System.out.print(i + " ");
+            sum += i;
         }
-        total = count + count;
 
-        System.out.print(total);
+        System.out.println();
+        System.out.println("Somatório: " + sum);
     }
 }
