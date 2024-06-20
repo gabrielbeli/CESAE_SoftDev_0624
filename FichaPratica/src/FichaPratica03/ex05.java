@@ -13,7 +13,8 @@ public class ex05 {
         number = input.nextInt();
 
         System.out.print("Insira uma mensagem: ");
-        mess = input.next();
+        input.nextLine();
+        mess = input.nextLine();
 
         while (count < number) {
             System.out.print(mess);
