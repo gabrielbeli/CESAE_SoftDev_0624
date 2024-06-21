@@ -8,15 +8,15 @@ public class ex09 {
 
         int count = 0;
         double sum = 0.0;
-        int number;
+        int number=0;
 
-        while (true) {
+        while (number != -1) {
             System.out.print("Digite um número (-1 para terminar): ");
             number = input.nextInt();
 
-            if (number == -1) {
+            /*if (number == -1) {
                 break;
-            }
+            }*/
 
             sum += number;
             count++;

@@ -1,4 +1,4 @@
-package FichaPratica03;
+package FichaPratica03Refazendo;
 
 import java.util.Scanner;
 
