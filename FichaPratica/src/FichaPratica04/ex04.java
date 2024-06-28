@@ -11,6 +11,6 @@ public class ex04 {
         System.out.print("Insira um numero");
         number = input.nextInt();
 
-        for (number
+        //for (number
     }
 }
