@@ -9,20 +9,22 @@ public class ex12 {
         int[] vetor = new int[10];
         int[] vetor2 = new int[10];
 
-        for (int X = 0; X < 10; X++){
-            System.out.print("Insira no Vetor["+X+"]: ");
+        for (int X = 0; X < 10; X++) {
+            System.out.print("Insira no Vetor[" + X + "]: ");
             vetor[X] = input.nextInt();
         }
 
-        for (int X = 0; X < 10; X++){
-            System.out.print("Insira no Vetor["+X+"]: ");
+        for (int X = 0; X < 10; X++) {
+            System.out.print("Insira no Vetor[" + X + "]: ");
             vetor2[X] = input.nextInt();
         }
 
-        int[][] matriz = new int[2][10];
+        int[][] matriz = new int[10][2];
 
-        matriz[0] = vetor;
-        matriz[1] = vetor2;
+        for (int X = 0; X < 10; X++) {
+            matriz[X][0] = vetor[X];
+            matriz[X][1] = vetor2[X];
+        }
 
         for (int X = 0; X < matriz.length; X++) {
             for (int Y = 0; Y < matriz[X].length; Y++) {
