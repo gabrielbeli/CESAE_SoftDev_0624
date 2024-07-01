@@ -20,7 +20,10 @@ public class ex13 {
         for (int X = 0; X < 4; X++) {
             for (int Y = 0; Y < 4; Y++) {
                 System.out.print(matriz[X][Y] + " ");
-                soma = matriz[0][0] + matriz[1][1] + matriz[2][2] + matriz[3][3];
+
+                if (X == Y) {
+                    soma += matriz[X][Y];
+                }
             }
             System.out.println();
         }

@@ -28,10 +28,12 @@ public class ex07 {
         for (int X = 0; X < vetor.length; X++) {
             if (vetor[X] == numero) {
                 contador++;
+
+                System.out.println( vetor[X] - contador );
             }
         }
 
-        System.out.println("O numero " + numero + " aparece " + contador + " vez(es)");
+        //System.out.println( vetor[X] -  contador );
 
     }
 }

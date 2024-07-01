@@ -29,6 +29,6 @@ public class ex04 {
                 contador++;
             }
         }
-        System.out.println("O numero " + numero + " aparece " + contador + "vezes");
+        System.out.println("O numero " + numero + " aparece em" + vetor );
     }
 }
