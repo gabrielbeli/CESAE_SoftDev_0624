@@ -22,13 +22,17 @@ public class ex04 {
         System.out.print("\nInsira um numero inteiro para verificar se ele aparece: ");
         int numero = input.nextInt();
 
-        int contador = 0;
+        boolean encontrado = false;
 
         for (int X = 0; X < vetor.length; X++) {
             if (vetor[X] == numero) {
-                contador++;
+                System.out.println("O numero " + numero + " aparece no vetor na posição " + X);
+                encontrado = true;
             }
         }
-        System.out.println("O numero " + numero + " aparece em" + vetor );
+
+        if (!encontrado) {
+            System.out.println("O numero " + numero + " não existe no vetor.");
+        }
     }
 }

@@ -15,16 +15,29 @@ public class ex05 {
 
         System.out.println("\n________________________\n");
 
-        for (int X = 0; X < vetor.length; X++) {
-            System.out.println("Vetor[" + X + "] = " + vetor[X]);
-        }
+        boolean encontrado = false; // Variável para verificar se há duplicatas
+        boolean[] verificado = new boolean[vetor.length]; // Vetor auxiliar para marcar elementos verificados
+
+        System.out.println("\nValores que aparecem mais de uma vez:");
 
         for (int X = 0; X < vetor.length; X++) {
-            if (vetor[X] == vetor[X]) {
-                System.out.println("Vetor[" + X + "] = " + (vetor[X]));
+            if (!verificado[X]) { // Verificar apenas os elementos que ainda não foram marcados
+                int count = 1;
+                for (int Y = X + 1; Y < vetor.length; Y++) {
+                    if (vetor[X] == vetor[Y]) {
+                        verificado[Y] = true;
+                        count++;
+                    }
+                }
+                if (count > 1) {
+                    System.out.println("O valor " + vetor[X] + " aparece " + count + " vezes.");
+                    encontrado = true;
+                }
             }
-
         }
 
+        if (!encontrado) {
+            System.out.println("Não há valores que aparecem mais de uma vez.");
+        }
     }
 }

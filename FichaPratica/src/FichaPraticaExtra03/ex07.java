@@ -33,7 +33,21 @@ public class ex07 {
             }
         }
 
-        //System.out.println( vetor[X] -  contador );
+        int[] novoVetor = new int[vetor.length - contador];
+        int index = 0;
 
+        for (int X = 0; X < vetor.length; X++) {
+            if (vetor[X] != numero) {
+                novoVetor[index++] = vetor[X];
+            }
+        }
+
+        System.out.println("\n________________________\n");
+
+        System.out.println("Novo vetor sem o valor " + numero + ":\n");
+
+        for (int X = 0; X < novoVetor.length; X++) {
+            System.out.println("Vetor[" + X + "] = " + novoVetor[X]);
+        }
     }
 }
