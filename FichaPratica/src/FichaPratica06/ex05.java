@@ -64,7 +64,7 @@ public class ex05 {
      * @param vetor Array a ser impresso
      */
     public static void imprimirArray(int[] vetor) {
-        for (int X = 1; X < vetor.length; X++) {
+        for (int X = 0; X < vetor.length; X++) {
             System.out.println("Array[" + X + "]: " + vetor[X]);
         }
     }

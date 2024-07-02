@@ -14,19 +14,19 @@ public class ex06 {
 
         // Perguntar tamanho do vetor
         System.out.print("Tamanho do Array: ");
-        tamanhoArray=input.nextInt();
+        tamanhoArray = input.nextInt();
 
         // Declarar o array
         int[] vetor = new int[tamanhoArray];
 
         // Preencher o vetor
-        for(int indice=0; indice<vetor.length;indice++){
-            System.out.print("Insira no vetor["+indice+"]: ");
-            vetor[indice]= input.nextInt();
+        for (int X = 0; X < vetor.length; X++) {
+            System.out.print("Insira no vetor[" + X + "]: ");
+            vetor[X] = input.nextInt();
         }
 
         // Analisar o vetor
-        do{
+        do {
             System.out.println("\n\n******* Análise do Vetor *******");
             System.out.println("1. Imprimir o Vetor");
             System.out.println("2. Maior Elemento");
@@ -34,25 +34,25 @@ public class ex06 {
             System.out.println("4. Crescente ou Não Crescente");
             System.out.println("0. Sair");
             System.out.print("\nInsira a opção: ");
-            opcao= input.nextInt();
+            opcao = input.nextInt();
 
-            switch (opcao){
+            switch (opcao) {
                 case 1: // Imprimir o vetor
                     imprimirArray(vetor);
                     break;
 
                 case 2: // Maior elemento
-                    System.out.println("Maior: "+maiorElementoArray(vetor));
+                    System.out.println("Maior: " + maiorElementoArray(vetor));
                     break;
 
                 case 3: // Menor elemento
-                    System.out.println("Menor: "+menorElementoArray(vetor));
+                    System.out.println("Menor: " + menorElementoArray(vetor));
                     break;
 
                 case 4: // Crescente ou não
-                    if(arrayCrescente(vetor)){
+                    if (arrayCrescente(vetor)) {
                         System.out.println("Crescente");
-                    }else{
+                    } else {
                         System.out.println("Não Crescente");
                     }
                     break;
@@ -64,7 +64,7 @@ public class ex06 {
                 default:
                     System.out.println("Opção Inválida");
             }
-        }while(opcao!=0);
+        } while (opcao != 0);
     }
 }
 
