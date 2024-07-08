@@ -11,7 +11,7 @@ public class ex02 {
 
         PrintWriter escritaNoFicheiro = new PrintWriter(novoFicheiro);
 
-        String mensagem = "Vai todo mundo ficar bem empregado no final do curso!";
+        String mensagem = "Vai tudo ficar bem!";
 
         escritaNoFicheiro.println(mensagem);
 
