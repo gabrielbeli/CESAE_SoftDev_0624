@@ -2,10 +2,9 @@ package EX_05;
 
 public class Carro {
 
-    String modelo;
-    String marca;
-    int ano;
-    boolean ligar;
+    private String modelo;
+    private String marca;
+    private int ano;
 
     public Carro(String modelo, String marca, int ano) {
         this.modelo = modelo;
@@ -14,6 +13,6 @@ public class Carro {
     }
 
     public void ligar() {
-        System.out.println();
+        System.out.println("O carro está ligado.");
     }
 }
