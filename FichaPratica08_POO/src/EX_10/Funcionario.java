@@ -13,12 +13,8 @@ public class Funcionario {
     }
 
     public void aumentarSalario(double percentual) {
-        if (percentual > 0) {
-            this.salario += this.salario * (percentual / 100);
-            System.out.println("Salário aumentado em " + percentual + "%.");
-        } else {
-            System.out.println("Percentual inválido para aumento.");
-        }
+        this.salario += this.salario * (percentual / 100);
+        System.out.println("Salário aumentado em " + percentual + "%.");
     }
 
     public void exibirDados() {
