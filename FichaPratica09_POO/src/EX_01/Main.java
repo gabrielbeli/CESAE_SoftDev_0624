@@ -8,7 +8,8 @@ public class Main {
 
         //fiat147.ligar();
 
-        //fiat147.corrida(adversario);
+        CarroAtual vencedor = fiat147.corrida(adversario);
+        vencedor.mostrarDetalhes();
 
         fiat147.consultaKm(fiat147.consumoKm(100));
         adversario.consultaKm(adversario.consumoKm(100));

@@ -45,21 +45,28 @@ public class CarroAtual {
 
     }
 
-    public void corrida(CarroAtual adversario){
+    public CarroAtual corrida(CarroAtual adversario){
 
         if(this.potencia > adversario.potencia){
-            System.out.println(this.modelo + " é o carro vencedor");
+            return this;
         } else
 
         if(this.potencia == adversario.potencia && this.cilindrada > adversario.cilindrada){
-            System.out.println(this.modelo + " é o carro vencedor");
+            return this;
         } else
 
         if(this.potencia == adversario.potencia && this.cilindrada == adversario.cilindrada && this.ano > adversario.ano){
-            System.out.println(this.modelo + " é o carro vencedor");
+            return this;
         } else {
-            System.out.println(adversario.modelo + " é o carro vencedor");
+            return adversario;
         }
+    }
+
+    public void mostrarDetalhes(){
+        System.out.println("O carro vencedor é o " + this.modelo + " marca " + this.marca );
+        System.out.println("Ano: " + this.ano);
+        System.out.println("Potencia: " + this.potencia);
+        System.out.println("Cilindrada: " + this.cilindrada);
     }
 
     public double consumoKm(double distancia){

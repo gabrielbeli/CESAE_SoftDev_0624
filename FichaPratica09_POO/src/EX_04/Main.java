@@ -3,8 +3,10 @@ package EX_04;
 public class Main {
     public static void main(String[] args) {
 
-        Imovel imovel1 = new Imovel("Cimo de vila", 1, "Porto", TipoImovel.APARTAMENTO, Acabamento.NOVA, 100, 3, 2, 10);
-        Imovel imovel2 = new Imovel("Laurides Bonamigo", 2, "São Paulo", TipoImovel.CASA, Acabamento.USADA, 150, 4, 3, 15);
+        Imovel imovel1 = new Imovel("Cimo de vila", 1, "Porto",
+                TipoImovel.APARTAMENTO, Acabamento.NOVA, 100, 3, 2, 10);
+        Imovel imovel2 = new Imovel("Laurides Bonamigo", 2, "São Paulo", TipoImovel.CASA,
+                Acabamento.USADA, 150, 4, 3, 15);
 
         imovel1.imprimirDescricao();
         System.out.println("Valor do Imóvel 1: " + imovel1.calcularValor() + " EUR");
