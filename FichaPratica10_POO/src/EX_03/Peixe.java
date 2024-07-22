@@ -4,29 +4,25 @@ public class Peixe {
 
     private String especie;
     private double peso;
-    private double preço;
+    private double precoPorKg;
 
-    public Peixe(String especie, double peso, double preço) {
-
+    public Peixe(String especie, double peso, double precoPorKg) {
         this.especie = especie;
         this.peso = peso;
-        this.preço = preço;
+        this.precoPorKg = precoPorKg;
     }
 
     public double getPeso() {
         return peso;
     }
 
-    public double getPreço() {
-        return preço;
-    }
 
-    public String getEspecie() {
-        return especie;
+    public double getPrecoPorKg() {
+        return precoPorKg;
     }
 
     public void exibirDetalhes(){
-        System.out.println(this.especie + "||" + this.peso + "||" + this.preço);
+        System.out.println(" "+this.especie + "||" + this.peso + "||" + this.precoPorKg);
     }
 
 }
