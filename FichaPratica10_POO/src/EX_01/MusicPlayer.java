@@ -67,6 +67,6 @@ public class MusicPlayer {
         int minutos = (duracaoTotal % 3600) / 60;
         int segundos = duracaoTotal % 60;
 
-        System.out.println("\nDuração total: " + horas + minutos + segundos);
+        System.out.println("\nDuração total: " + horas +":"+ minutos +":"+ segundos);
     }
 }
