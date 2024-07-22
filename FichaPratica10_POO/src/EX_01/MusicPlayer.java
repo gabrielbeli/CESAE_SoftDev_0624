@@ -7,11 +7,13 @@ public class MusicPlayer {
     private ArrayList<Musica> programacao;
 
     public MusicPlayer() {
+
         this.programacao = new ArrayList<>();
     }
 
     // Adicionar música
     public void adicionarMusica(Musica musica) {
+
         programacao.add(musica);
     }
 
@@ -39,6 +41,7 @@ public class MusicPlayer {
 
     // Remover todas as músicas
     public void removerTodasMusicas() {
+
         programacao.clear();
     }
 

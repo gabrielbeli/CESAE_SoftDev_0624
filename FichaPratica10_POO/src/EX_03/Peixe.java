@@ -16,7 +16,6 @@ public class Peixe {
         return peso;
     }
 
-
     public double getPrecoPorKg() {
         return precoPorKg;
     }

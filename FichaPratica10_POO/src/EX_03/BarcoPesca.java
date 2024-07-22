@@ -13,7 +13,7 @@ public class BarcoPesca {
     private ArrayList<Peixe> peixesPescados;
     private ArrayList<Marisco> mariscoPescado;
 
-    public BarcoPesca(String nome, String cor, int anoFabrico,  MarcaBarco marca, int tripulacao,double capacidadeCarga) {
+    public BarcoPesca(String nome, String cor, int anoFabrico, MarcaBarco marca, int tripulacao, double capacidadeCarga) {
         this.nome = nome;
         this.cor = cor;
         this.anoFabrico = anoFabrico;
@@ -72,7 +72,7 @@ public class BarcoPesca {
         return valorRestante / tripulacao;
     }
 
-    private double calcularPesoTotal() {
+    public double calcularPesoTotal() {
         double pesoTotal = 0;
         for (Peixe peixe : peixesPescados) {
             pesoTotal += peixe.getPeso();
@@ -100,6 +100,9 @@ public class BarcoPesca {
             this.mariscoPescado.get(Y).exibirDetalhes();
         }
 
+
     }
 
 }
+
+
