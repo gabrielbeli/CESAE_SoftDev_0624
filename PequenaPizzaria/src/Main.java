@@ -1,29 +1,45 @@
-import Ingrediente.Ingrediente;
-import Pizza.Pizza;
+import Ingrediente.Base;
+import Ingrediente.Queijo;
+import Ingrediente.Carne;
+import Ingrediente.Vegetal;
+import Ingrediente.FrutosMar;
+import Pizzaria.Enum.BaseTipo;
+import Pizzaria.Enum.TipoQueijo;
+import Pizzaria.Enum.TipoCarne;
+import Pizzaria.Enum.TipoVegetal;
+import Pizzaria.Enum.TipoFrutosMar;
 import Pizzaria.Enum.TamanhoPizza;
 import Pizzaria.Enum.UnidadeMedida;
+import Pizzaria.Enum.OrigemIngrediente;
+import Pizza.Pizza;
+import Pizza.IngredientePizza;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Pizza pizza01 = new Pizza("150593", "Romana", "Pizza classica romana com presunto",
-                19.95, TamanhoPizza.GRANDE);
-        Pizza pizza02 = new Pizza("104305", "Calabresa", "Pizza de calabresa com cebola na brasa",
-                16.50, TamanhoPizza.GRANDE);
-        Pizza pizza03 = new Pizza("183651", "Caipira", "Pizza com gostinho caipira de frango com milho na manteiga",
-                16.45, TamanhoPizza.GRANDE);
+        Base massaFina = new Base(1, "Massa Fina", UnidadeMedida.GRAMAS, 200, BaseTipo.MASSA_FINA);
 
-        Ingrediente ingrediente01 = new Ingrediente(150, "Queijo azul", UnidadeMedida.GRAMAS, 25);
-        Ingrediente ingrediente02 = new Ingrediente(150, "Presunto", UnidadeMedida.GRAMAS, 25);
-        Ingrediente ingrediente03 = new Ingrediente(150, "Frango", UnidadeMedida.GRAMAS, 25);
+        Queijo queijoMozarela = new Queijo(2, "Mozarela", UnidadeMedida.GRAMAS, 3, OrigemIngrediente.NACIONAL, TipoQueijo.MOZARELLA);
+        Carne carneFrango = new Carne(3, "Frango", UnidadeMedida.GRAMAS, 3, OrigemIngrediente.NACIONAL, TipoCarne.FRANGO);
+        Vegetal pimento = new Vegetal(4, "Pimento", UnidadeMedida.GRAMAS, 2, OrigemIngrediente.NACIONAL, TipoVegetal.PIMENTO);
+        FrutosMar camarão = new FrutosMar(5, "Camarão", UnidadeMedida.GRAMAS, 3, OrigemIngrediente.IMPORTADO, TipoFrutosMar.CAMARÃO);
+        Queijo queijoSerra = new Queijo(6, "Serra", UnidadeMedida.GRAMAS, 4, OrigemIngrediente.NACIONAL, TipoQueijo.SERRA);
+        Carne carnePorco = new Carne(7, "Porco", UnidadeMedida.GRAMAS, 4, OrigemIngrediente.NACIONAL, TipoCarne.PORCO);
 
-        //pizza01.addIngrediente();
+        Pizza pizza = new Pizza("1505", "Mistureba", "Essa delicia traz uma mistura inesperada feita por um caipira pescador", 19.95, TamanhoPizza.GRANDE);
+        pizza.setBase(massaFina);
+        pizza.addIngredientePizza(new IngredientePizza(queijoMozarela, 100));
+        pizza.addIngredientePizza(new IngredientePizza(carneFrango, 200));
+        pizza.addIngredientePizza(new IngredientePizza(pimento, 50));
+        pizza.addIngredientePizza(new IngredientePizza(camarão, 75));
+        //pizza.addIngredientePizza(new IngredientePizza(queijoSerra, 75);
 
-        pizza01.exibirDetalhes();
+        pizza.exibirDetalhes();
+        System.out.println("Total de calorias: " + pizza.calcularCalorias());
 
-
-
-
+        pizza.removeIngredientePizza(3);
+        pizza.exibirDetalhes();
+        System.out.println("Total de calorias após remoção: " + pizza.calcularCalorias());
     }
 }

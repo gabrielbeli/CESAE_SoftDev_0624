@@ -15,7 +15,19 @@ public class Ingrediente {
         this.caloriasPorUnidade = caloriasPorUnidade;
     }
 
+    public int getCode() {
+        return code;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
     public UnidadeMedida getUnidadeMedida() {
         return unidadeMedida;
+    }
+
+    public int getCaloriasPorUnidade() {
+        return caloriasPorUnidade;
     }
 }

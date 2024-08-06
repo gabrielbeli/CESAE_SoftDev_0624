@@ -1,72 +1,84 @@
 package Pizza;
 
-
-import Ingrediente.Ingrediente;
-import Ingrediente.IngredientePizza;
+import Ingrediente.Base;
+import Ingrediente.Topping;
 import Pizzaria.Enum.TamanhoPizza;
-
 import java.util.ArrayList;
+import java.util.List;
 
 public class Pizza {
-    private final int MAX_INGREDIENTS = 5;
+    private static final int MAX_INGREDIENTS = 5;
     private String code;
     private String nome;
     private String descricao;
     private double preco;
     private TamanhoPizza tamanhoPizza;
-    private ArrayList<IngredientePizza> ingredientePizza;
+    private Base base;
+    private ArrayList<IngredientePizza> ingredientesPizza;
+    private double caloriasTotais;
 
     public Pizza(String code, String nome, String descricao, double preco, TamanhoPizza tamanhoPizza) {
         this.code = code;
         this.nome = nome;
         this.descricao = descricao;
-        this.tamanhoPizza = tamanhoPizza;
         this.preco = preco;
-        this.ingredientePizza = new ArrayList<IngredientePizza>();
+        this.tamanhoPizza = tamanhoPizza;
+        this.ingredientesPizza = new ArrayList<>();
+        this.caloriasTotais = 0;
     }
 
-    public void addIngrediente(IngredientePizza ingredienteNovo) {
-        ingredientePizza.add(ingredienteNovo);
+    public void setBase(Base base) {
+        this.base = base;
+        atualizarCalorias();
     }
 
-    public void removeIngrediente(String code) {
-
-        ingredientePizza.remove(code);
-    }
-
-    public double calcularPesoIngrediente() {
-        double pesoTotal = 0;
-
-        for (IngredientePizza ingrediente : ingredientePizza) {
-            pesoTotal += ingrediente.getQuantidade();
+    public void addIngredientePizza(IngredientePizza ingredientePizza) {
+        if (ingredientesPizza.size() < MAX_INGREDIENTS) {
+            ingredientesPizza.add(ingredientePizza);
+            atualizarCalorias();
+        } else {
+            System.out.println("Número máximo de ingredientes atingido!");
         }
-        return pesoTotal;
     }
 
-    public double calcularCaloria(double pesoTotal, int caloriaPorUnidade) {
+    public void removeIngredientePizza(int code) {
+        List<IngredientePizza> toRemove = new ArrayList<>();
 
-        return pesoTotal * caloriaPorUnidade;
+        for (IngredientePizza ingredientePizza : ingredientesPizza) {
+            if (ingredientePizza.getIngrediente().getCode() == code) {
+                toRemove.add(ingredientePizza);
+            }
+        }
 
+        ingredientesPizza.removeAll(toRemove);
+        atualizarCalorias();
     }
 
-    public void exibirDetalhes(){
+    private void atualizarCalorias() {
+        caloriasTotais = 0;
+        if (base != null) {
+            caloriasTotais += base.getCaloriasPorUnidade();
+        }
+        for (IngredientePizza ingredientePizza : ingredientesPizza) {
+            caloriasTotais += ingredientePizza.getIngrediente().getCaloriasPorUnidade() * ingredientePizza.getQuantidade();
+        }
+    }
+
+    public double calcularCalorias() {
+        return caloriasTotais;
+    }
+
+    public void exibirDetalhes() {
         System.out.println("\n********* PIZZA ********** \n");
-        System.out.println(this.code + "||" + this.nome + "||" + this.preco);
-        System.out.println("Sobre: " + this.descricao);
-        System.out.println("Tamanho: " +this.tamanhoPizza);
-        this.exibirDetalhesIngredientes();
-    }
-
-    public void exibirDetalhesIngredientes(){
-        System.out.println("\nLista de ingredientes: ");
-
-        for (int X = 0; X < ingredientePizza.size(); X++) {
-            System.out.println("Ingrediente " + (X + 1) + " - ");
-            this.ingredientePizza.get(X).exibirDetalhes();
+        System.out.println("Código: " + this.code + " || Nome: " + this.nome + " || Preço: " + this.preco);
+        System.out.println("Descrição: " + this.descricao);
+        System.out.println("Tamanho: " + this.tamanhoPizza);
+        if (base != null) {
+            System.out.println("Base: " + base.getBaseTipo());
+        }
+        System.out.println("\nIngredientes:\n");
+        for (IngredientePizza ingredientePizza : ingredientesPizza) {
+            System.out.println(ingredientePizza.getIngrediente().getNome() + " || Quantidade: " + ingredientePizza.getQuantidade() + " || Origem: " + (ingredientePizza.getIngrediente() instanceof Topping ? ((Topping)ingredientePizza.getIngrediente()).getOrigem() : "N/A"));
         }
     }
-
-
 }
-
-

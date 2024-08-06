@@ -1,11 +1,12 @@
-package Ingrediente;
+package Pizza;
+
+import Ingrediente.Ingrediente;
 
 public class IngredientePizza {
-
     private Ingrediente ingrediente;
     private double quantidade;
 
-    public IngredientePizza(){
+    public IngredientePizza(Ingrediente ingrediente, double quantidade) {
         this.ingrediente = ingrediente;
         this.quantidade = quantidade;
     }
@@ -18,7 +19,7 @@ public class IngredientePizza {
         return quantidade;
     }
 
-    public void exibirDetalhes(){
-        System.out.println(this.ingrediente + " || " + this.quantidade);
+    public void setQuantidade(double quantidade) {
+        this.quantidade = quantidade;
     }
 }
